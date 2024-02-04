@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" src="text_for_carousel_v115.txt"></script>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {
+	vertical-align: middle;
+	border-radius: 10px;
+}
+
+.buynow {
+   position:relative;
+   margin-left:10%;
+   margin-top:10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #1871F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text (White) */
+.text_white {
+  color: #f2f2f2;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Caption text (White) */
+.text14_white {
+  color: #f2f2f2;
+  font-size: 14px;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Caption text (white) */
+.text13_white_right {
+  color: #f2f2f2;
+  font-size: 13px;
+  position: absolute;
+  width: 35%;
+  text-align: left;
+  top: 10px;
+  right: 30px;
+}
+/* Caption text (White) */
+.text12_white {
+  color: #f2f2f2;
+  font-size: 12px;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Caption text (Black) */
+.text16_black {
+  color: #424040;
+  font-size: 16px;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Caption text (Black) */
+.text14_black {
+  color: #424040;
+  font-size: 14px;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Caption text (Black) */
+.text12_black {
+  color: #424040;
+  font-size: 12px;
+  position: absolute;
+  width: 50%;
+  text-align: left;
+  top: 10px;
+  padding-left: 50px;
+}
+/* Number text (white) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+/* Number text (black) */
+.numbertext2 {
+  color: #424040;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 8px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+	
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+	
+.buynow {
+      position: absolute;
+      bottom: 5px;
+	  right: 50px;
+      padding: 5px 30px;
+}
+
+.language {
+	  text-align: right;
+	  padding: 5px 40px 0px 20px;
+	  position: absolute;
+	  top: 0px;
+}
+
+button { 
+  background-color: #F6D009;
+  vertical-align: middle;
+  border-radius: 10px;
+  cursor: pointer;
+  color:black;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: buttonface;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+}
+button:hover {
+  background-color: #E9A52B;
+}
+
+	
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>    
+  <span class="dot" onclick="currentSlide(6)"></span>    
+</div>
+
+<div class="language">
+	<select class="body_text" id="sel" name="critical" onchange="getText(this)">
+		<option value=0> English US (English US) </option>
+		<option value=1> Bahasa Melayu ‎(Malay)‎ </option>
+		<option value=2> Čeština (Czech) </option>
+		<option value=3> Dansk ‎(Danish)‎ </option>
+		<option value=4> Deutsch (German) </option>
+		<option value=5> Español (Mexico) </option>
+		<option value=6> Español ‎(Spanish)‎‎ </option>
+		<option value=7> Français (French) </option>
+		<option value=8> Français canadien (Canadian French) </option>   
+		<option value=9> Hrvatski ‎(Croatian)‎‎ </option>
+		<option value=10> Italiano (Italian) </option>
+		<option value=11> Magyar ‎(Hungarian)‎‎ </option>
+		<option value=12> Nederlands (Dutch) </option>
+		<option value=13> Norsk bokmål ‎(Norwegian Bokmål)‎
+		<option value=14> Polski (Polish) </option>	
+		<option value=15> Português do Brasil ‎(Brazilian Portuguese)‎‎ </option>
+		<option value=16> Română ‎(Romanian)‎‎ </option>
+		<option value=17> Schweizer Hochdeutsch ‎(Swiss High German)‎‎ </option>
+		<option value=18> Slovenčina ‎(Slovak)‎‎ </option>
+		<option value=19> Slovenščina ‎(Slovenian)‎‎ </option>
+		<option value=20> Suomi ‎(Finnish)‎‎ </option>
+		<option value=21> Svenska ‎(Swedish)‎‎ </option>
+		<option value=22> Tiếng Việt (Vietnamese) </option>
+		<option value=23> Türkçe ‎(Turkish)‎‎ </option>
+		<option value=24> Русский ‎(Russian)‎‎ </option>
+		<option value=25> العربية (Arabic) </option>
+		<option value=26> ภาษาไทย (Thai) </option> 
+		<option value=27> 한국어 ‎(Korean)‎‎ </option>
+		<option value=28> 日本語 (Japanese) </option>
+		<option value=29> 简体中文 (Simplified Chinese) </option> 
+		<option value=30> 繁體中文 (Traditional Chinese) </option>
+	</select></h1></font>
+</div>
+	
+<div class="slideshow-container">
+	
+	<div class="mySlides fade">
+  		<div class="numbertext">1 / 6</div>
+  		<img src="images/1a.png" style="width:845px">
+		<a href="https://performancemanager8.successfactors.com/sf/learning?destUrl=https%3A%2F%2Fcarrier.plateau.com%2Flearning%2Fuser%2Fdeeplink_redirect.jsp%3FlinkId%3DHOME_PAGE%26pageID%3D677f36436d894208908b94c86478fce4%26fromSF%3DY&company=Carrier" target="_blank">
+		<button id="btn1" class="buynow"></button></a>
+			<div id="textDiv1" class="text13_white_right"> </div>
+	</div>
+	
+	<div class="mySlides fade">
+  		<div class="numbertext">2 / 6</div>
+  		<img src="images/2a.png" style="width:845px">
+		<a href="https://www.berlitz.com/corporate/carrier" target="_blank">
+		<button id="btn2" class="buynow"></button></a>
+			<div id="textDiv2" class="text12_white"> </div>
+	</div>
+	
+	<div class="mySlides fade">
+  		<div class="numbertext">3 / 6</div>
+  		<img src="images/3a.png" style="width:845px">
+		<a href="https://performancemanager8.successfactors.com/sf/learning?destUrl=https%3a%2f%2fcarrier%2eplateau%2ecom%2flearning%2fuser%2fdeeplink%5fredirect%2ejsp%3flinkId%3dCATALOG%5fSEARCH%26sbArSel%3dLive%2bVirtual%2bCourses%26keywords%3d%26selKeyWordHeader%3d%26catSel%3d%26srcSel%3d%26delMthSel%3d%26ILDateFrm%3d%26ILDateTo%3d%26ILBlend%3d%26ILSchd%3d%26fromSF%3dY&company=Carrier" target="_blank">
+		<button id="btn3" class="buynow"></button></a>
+			<div id="textDiv3" class="text14_black"> </div>
+	</div>
+	
+	<div class="mySlides fade">
+  		<div class="numbertext">4 / 6</div>
+  		<img src="images/4a.png" style="width:845px">
+		<a href="https://digitalacademy.apps.carrier.com/" target="_blank">
+		<button id="btn4" class="buynow"></button></a>
+			<div id="textDiv4" class="text14_black"> </div>
+	</div>
+
+	
+	<div class="mySlides fade">
+  		<div class="numbertext">5 / 6</div>
+  		<img src="images/5a.png" style="width:845px">
+		<a href="https://carcgl.sharepoint.com/sites/Carrier-Engineering-University" target="_blank">
+		<button id="btn5" class="buynow"></button></a>
+			<div id="textDiv5" class="text14_black"> </div>
+	</div>
+
+	<div class="mySlides fade">
+  		<div class="numbertext">6 / 6</div>
+  		<img src="images/6a.png" style="width:845px">
+		<a href="https://training.carrieruniversity.com/" target="_blank">
+		<button id="btn6" class="buynow"></button></a>
+			<div id="textDiv6" class="text14_white"> </div>
+  		</div>
+	</div>		
+
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<script>
+var myVar;
+
+function myStopFunction() {
+  clearTimeout(myVar);
+}
+
+function plusSlides(position) {
+    myStopFunction();
+    slideIndex += position;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    else if(slideIndex < 1){slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+
+      }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+
+function currentSlide(index) {
+	myStopFunction();
+    if (index > slides.length) {index = 1}
+    else if(index < 1){index = slides.length}
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+        slides[index-1].style.display = "block";  
+        dots[index-1].className += " active";
+    }
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    slides = document.getElementsByClassName("mySlides");
+    dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    myVar = setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html> 
